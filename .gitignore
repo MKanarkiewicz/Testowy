@@ -1,0 +1,5 @@
+# ignore ide folder
+.vs
+
+# ignore build results
+obj
