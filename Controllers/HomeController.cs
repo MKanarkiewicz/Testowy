@@ -1,4 +1,5 @@
 ﻿using ICollege_WebApp.DAL;
+using ICollege_WebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,22 @@ namespace ICollege_WebApp.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            GenerateData generateData = new GenerateData();
+
+            //Address address = generateData.RandomAddress();
+            Student student = generateData.RandomPerson();
+
+            ViewBag.ID = student.ID;
+            ViewBag.Imie = student.FirstName;
+            ViewBag.Nazwisko = student.LastName;
+            ViewBag.Pesel = student.Pesel;
+            ViewBag.DataUrodzenia = student.DateBirth;
+            ViewBag.Ulica = student.Address.Street;
+            ViewBag.Numer = student.Address.Number;
+            ViewBag.Kod = student.Address.ZipCode;
+            ViewBag.Miasto = student.Address.Town;
+            ViewBag.Login = student.Login.Mail;
+            ViewBag.Haslo = student.Login.Password;
 
             return View();
         }
