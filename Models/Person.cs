@@ -11,7 +11,7 @@ namespace ICollege_WebApp.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Pesel { get; set; }
-        public DateTime DateBirth { get; set; }
+        public string DateBirth { get; set; }
         public Address Address { get; set; }
         public Login Login { get; set; }
     }
